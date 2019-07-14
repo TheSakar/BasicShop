@@ -1,0 +1,25 @@
+.productsHeader{
+    height: 80px;
+}
+
+
+.productsBody{
+    height: 100%;
+    background-color: aliceblue;
+}
+
+.category{
+    border-style: solid;
+    text-transform: uppercase;
+    border-width: 1px;
+    color: #666;
+    border-color: #c7c7c7;
+    list-style: none;
+    padding: 8px;
+    margin-top: 7%;
+    margin-left: 2px;
+}
+
+.category-list{
+    align-items: center;
+}
