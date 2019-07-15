@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-5 m-4">
-    <app-cart></app-cart>
+    <app-cart [catchedProducts]="cart" [totalPrice]="totalPrice" (removeFromParent)="removeProduct($event)"></app-cart>
   </div>
 
   <div class="col-6 m-3">
-    <app-products></app-products>
+    <app-products (passProduct)="catchProduct($event)"></app-products>
   </div>
 </div>

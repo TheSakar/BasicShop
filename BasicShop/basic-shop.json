@@ -1,0 +1,57 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Orhan",
+      "lastName": "Sakar"
+    },
+    {
+      "id": 1,
+      "firstName": "Mustafa",
+      "lastName": "Bilici"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "productName": "pc 1",
+      "categoryId": 1,
+      "unitPrice": 213
+    },
+    {
+      "id": 2,
+      "productName": "pc 2",
+      "categoryId": 1,
+      "unitPrice": 435
+    },
+    {
+      "id": 3,
+      "productName": "pc 3",
+      "categoryId": 1,
+      "unitPrice": 1500
+    },
+    {
+      "id": 4,
+      "productName": "phone 3",
+      "categoryId": 2,
+      "unitPrice": 657
+    },
+    {
+      "id": 5,
+      "productName": "phone 3",
+      "categoryId": 2,
+      "unitPrice": 1500
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "categoryName": "Laptop"
+    },
+    {
+      "id": 2,
+      "categoryName": "Smart phone"
+    }
+  ]
+
+}

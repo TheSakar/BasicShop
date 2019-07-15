@@ -40,6 +40,8 @@ namespace BasicShop.API
             services.AddSingleton<IOrderService, OrderManager>();
             services.AddSingleton<ICategoryService, CategoryManager>();
             services.AddSingleton<IUserService, UserManager>();
+            
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +57,7 @@ namespace BasicShop.API
                 app.UseHsts();
             }
 
+            app.UseCors(x=>x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().AllowCredentials());
             app.UseMvc();
         }
     }

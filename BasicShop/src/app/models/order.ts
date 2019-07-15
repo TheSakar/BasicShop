@@ -1,6 +1,7 @@
-import { Product } from './product';
+import { OrderProduct } from './orderproducts';
 
 export class Order{
-    id:number;
-    products:Product[];
+    id? :number;
+    orderProducts:OrderProduct[]=[];
+    userId:number=1;
 }

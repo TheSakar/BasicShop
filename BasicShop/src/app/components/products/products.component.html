@@ -1,18 +1,32 @@
 <div class="productsHeader">
   <mat-toolbar>
-    <mat-toolbar-row class="category-list">
+    <mat-toolbar-row>
       <ul class="row">
-        <li class="category">
-          Laptop
-        </li>
-        <li class="category">
-          Smart phone
-        </li>
+        <button class="category col" *ngFor="let category of categories" (click)="getByCategoryId(category)" >
+          {{category.categoryName}}
+        </button>
       </ul>
     </mat-toolbar-row>
   </mat-toolbar>
 </div>
 
 <div class="productsBody mt-1">
+  <div class="row">
+    <div class="col-3 mt-2" *ngFor="let product of products">
+
+      <mat-card class="example-card">
+        <mat-card-header>
+
+          <mat-card-title>{{product.productName}}</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-actions>
+          <button (click)="addToCart(product)" mat-button>Sepete ekle</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+  </div>
+
 
 </div>

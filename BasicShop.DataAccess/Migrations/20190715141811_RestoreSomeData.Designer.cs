@@ -3,14 +3,16 @@ using BasicShop.DataAccess.Concrete.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BasicShop.DataAccess.Migrations
 {
     [DbContext(typeof(BasicShopContext))]
-    partial class BasicShopContextModelSnapshot : ModelSnapshot
+    [Migration("20190715141811_RestoreSomeData")]
+    partial class RestoreSomeData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -68,7 +70,7 @@ namespace BasicShop.DataAccess.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderProducts");
+                    b.ToTable("OrderProduct");
                 });
 
             modelBuilder.Entity("BasicShop.Entity.Product", b =>
@@ -126,20 +128,6 @@ namespace BasicShop.DataAccess.Migrations
                             CategoryId = 2,
                             ProductName = "Lenovo X270",
                             UnitPrice = 6800m
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CategoryId = 1,
-                            ProductName = "LG G4",
-                            UnitPrice = 2500m
-                        },
-                        new
-                        {
-                            Id = 7,
-                            CategoryId = 1,
-                            ProductName = "IPhone 7",
-                            UnitPrice = 5000m
                         });
                 });
 

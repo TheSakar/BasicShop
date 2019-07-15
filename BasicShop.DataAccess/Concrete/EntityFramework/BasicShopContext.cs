@@ -12,7 +12,9 @@ namespace BasicShop.DataAccess.Concrete.EntityFramework
         public DbSet<User> Users { get; set; }
 
         public DbSet<Order> Orders { get; set; }
-
+        
+        public DbSet<OrderProduct> OrderProducts { get; set; }
+        
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -54,7 +56,9 @@ namespace BasicShop.DataAccess.Concrete.EntityFramework
                 new Product {Id = 2, CategoryId = 1, ProductName = "IPhone 7", UnitPrice = 5000},
                 new Product {Id = 3, CategoryId = 2, ProductName = "Dell 9570", UnitPrice = 13000},
                 new Product {Id = 4, CategoryId = 2, ProductName = "Lenovo Yoga 530", UnitPrice = 4700},
-                new Product {Id = 5, CategoryId = 2, ProductName = "Lenovo X270", UnitPrice = 6800}
+                new Product {Id = 5, CategoryId = 2, ProductName = "Lenovo X270", UnitPrice = 6800},
+                new Product {Id = 6, CategoryId = 1, ProductName = "LG G4", UnitPrice = 2500},
+                new Product {Id = 7, CategoryId = 1, ProductName = "IPhone 7", UnitPrice = 5000}
             );
 
             modelBuilder.Entity<User>().HasData(
