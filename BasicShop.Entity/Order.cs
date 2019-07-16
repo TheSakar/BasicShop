@@ -11,10 +11,12 @@ namespace BasicShop.Entity
 
         public User User { get; set; }
 
+
         public List<OrderProduct> OrderProducts { get; set; }
 
         public Order()
         {
+
             OrderProducts = new List<OrderProduct>();
         }
     }

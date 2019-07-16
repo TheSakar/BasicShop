@@ -35,7 +35,9 @@ namespace BasicShop.API
             services.AddSingleton<ICategoryDal, EfCategoryDal>();
             services.AddSingleton<IUserDal, EfUserDal>();
             services.AddSingleton<IOrderDal, EfOrderDal>();
+            services.AddSingleton<IOrderProductDal, EfOrderProductDal>();
 
+            services.AddSingleton<IOrderProductService,OrderProductManager>();
             services.AddSingleton<IProductService, ProductManager>();
             services.AddSingleton<IOrderService, OrderManager>();
             services.AddSingleton<ICategoryService, CategoryManager>();

@@ -4,18 +4,19 @@ import { OrderService } from 'src/app/services/order.service';
 import { Order } from 'src/app/models/order';
 import { OrderProduct } from 'src/app/models/orderproducts';
 import { MatSnackBar } from '@angular/material';
+import { OrderAddModel } from 'src/app/models/orderaddmodel';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css'],
-  providers:[OrderService]
+  providers: [OrderService]
 })
 export class CartComponent implements OnInit {
 
   constructor(private orderService: OrderService, private snackBar: MatSnackBar) { }
 
-  @Input() catchedProducts: Product[] = []
+  @Input() catchedProducts: Product[] = [];
 
   @Input() totalPrice: number = 0;
 
@@ -33,14 +34,11 @@ export class CartComponent implements OnInit {
   }
 
   buy() {
-    let order = new Order();
-    this.catchedProducts.forEach(product => {
-	let orderProduct = new OrderProduct();
-	orderProduct.productId = product.id;
-      order.orderProducts.push(orderProduct);
-	console.log(orderProduct);
-    });
-    this.orderService.postOrder(order).subscribe(() => {
+    let orderAddModel = new OrderAddModel();
+    orderAddModel.order.userId = 2;
+    orderAddModel.products = this.catchedProducts;
+    console.log(orderAddModel)
+    this.orderService.postOrder(orderAddModel).subscribe(() => {
       this.snackBar.open("Siparişiniz alındı.", "X", { duration: 4000 });
     }
     )

@@ -2,7 +2,6 @@ using BasicShop.API.Models;
 using BasicShop.Business.Abstract;
 using BasicShop.Entity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Query.Internal;
 
 namespace BasicShop.API.Controllers
 {
@@ -11,31 +10,26 @@ namespace BasicShop.API.Controllers
     public class OrdersController : ControllerBase
     {
         private readonly IOrderService _orderService;
-        private readonly IProductService _productService;
+        private readonly IOrderProductService _orderProductService;
 
-        public OrdersController(IOrderService orderService, IProductService productService)
+        public OrdersController(IOrderService orderService, IOrderProductService orderProductService)
         {
             _orderService = orderService;
-            _productService = productService;
+            _orderProductService = orderProductService;
         }
 
         [HttpPost]
         public IActionResult Post(OrderAddModel orderAddModel)
         {
-            
-            
-            
+            _orderService.Add(orderAddModel.Order);
+
             for (int i = 0; i < orderAddModel.Products.Count; i++)
             {
-                
                 var orderProduct = new OrderProduct();
-                orderProduct.Product = _productService.GetById(orderAddModel.Products[i].Id);
                 orderProduct.Order = orderAddModel.Order;
-
-                orderAddModel.Order.OrderProducts.Add(orderProduct);
+                orderProduct.Product = orderAddModel.Products[i];
+                _orderProductService.Add(orderProduct);
             }
-
-            _orderService.Add(orderAddModel.Order);
 
 
             return NoContent();

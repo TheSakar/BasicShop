@@ -10,6 +10,7 @@ namespace BasicShop.Entity
         {
             OrderProducts = new List<OrderProduct>();
         }
+
         public int Id { get; set; }
 
         public string ProductName { get; set; }
@@ -17,6 +18,7 @@ namespace BasicShop.Entity
         public decimal UnitPrice { get; set; }
 
         public int CategoryId { get; set; }
+        
 
         public string ImgUrl { get; set; }
 
