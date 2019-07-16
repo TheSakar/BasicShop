@@ -15,6 +15,9 @@ export class ProductsComponent implements OnInit {
   products: Product[];
   categories: Category[];
 
+  @Output()
+  passProduct = new EventEmitter();
+  
   constructor(private productsService: ProductsService, private categoriesService: CategoriesService) { }
 
   ngOnInit() {
@@ -22,8 +25,6 @@ export class ProductsComponent implements OnInit {
     this.getCategories();
   }
 
-  @Output()
-  passProduct = new EventEmitter();
 
   addToCart(product){
     this.passProduct.emit(product);

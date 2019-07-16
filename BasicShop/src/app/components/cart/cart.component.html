@@ -13,16 +13,18 @@
     <table class="table">
       <thead class="thead-dark">
         <tr>
-          <th scope="col">Product Name</th>
-          <th scope="col">Unit Price</th>
+          <th scope="col">Adet</th>
+          <th scope="col">Ürün Adı</th>
+          <th scope="col">Birim fiyatı</th>
           <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let product of catchedProducts">
-          <td>{{product.productName}}</td>
-          <td>{{product.unitPrice}}</td>
-          <td><button (click)="removeFromCart(product)" mat-stroked-button color="warn">Sepetten kaldır</button></td>
+        <tr *ngFor="let cartItem of catchedProducts.cartItems">
+          <td>{{cartItem.quantity}}</td>
+          <td>{{cartItem.product.productName}}</td>
+          <td>{{cartItem.product.unitPrice}}</td>
+          <td><button (click)="removeFromCart(cartItem)" mat-stroked-button color="warn">Sepetten kaldır</button></td>
         </tr>
       </tbody>
     </table>

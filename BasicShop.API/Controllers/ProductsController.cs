@@ -23,9 +23,9 @@ namespace BasicShop.API.Controllers
         }
 
         [HttpGet("{categoryId}")]
-        public ActionResult Get(int categoryId)
+        public ActionResult<List<Product>> Get(int categoryId)
         {
-            return Ok(_productService.GetByCategoryId(categoryId));
+            return _productService.GetByCategoryId(categoryId);
         }
         
         

@@ -1,4 +1,4 @@
-using BasicShop.API.Models;
+    using BasicShop.API.Models;
 using BasicShop.Business.Abstract;
 using BasicShop.Entity;
 using Microsoft.AspNetCore.Mvc;
@@ -23,11 +23,14 @@ namespace BasicShop.API.Controllers
         {
             _orderService.Add(orderAddModel.Order);
 
-            for (int i = 0; i < orderAddModel.Products.Count; i++)
+            for (int i = 0; i < orderAddModel.Cart.CartItems.Count; i++)
             {
-                var orderProduct = new OrderProduct();
-                orderProduct.Order = orderAddModel.Order;
-                orderProduct.Product = orderAddModel.Products[i];
+                var orderProduct = new OrderProduct
+                {
+                    Order = orderAddModel.Order,
+                    Product = orderAddModel.Cart.CartItems[i].Product,
+                    Quantity = orderAddModel.Cart.CartItems[i].Quantity
+                };
                 _orderProductService.Add(orderProduct);
             }
 

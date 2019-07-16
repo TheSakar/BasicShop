@@ -17,11 +17,12 @@
       <mat-card class="example-card">
         <mat-card-header>
 
-          <mat-card-title>{{product.productName}}</mat-card-title>
+          <mat-card-subtitle>{{product.productName}}</mat-card-subtitle>
         </mat-card-header>
 
         <mat-card-actions>
-          <button (click)="addToCart(product)" mat-button>Sepete ekle</button>
+
+            <button (click)="addToCart(product)" mat-button>Sepete ekle</button>
         </mat-card-actions>
       </mat-card>
     </div>

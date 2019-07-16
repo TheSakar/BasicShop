@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-5 m-4">
-    <app-cart [catchedProducts]="cart" [totalPrice]="totalPrice" (removeFromParent)="removeProduct($event)"></app-cart>
+    <app-cart [catchedProducts]="cart" (removeAllCartItems)="removeAllCartItems($event)" [totalPrice]="totalPrice" (removeFromParent)="removeProduct($event)"></app-cart>
   </div>
 
   <div class="col-6 m-3">

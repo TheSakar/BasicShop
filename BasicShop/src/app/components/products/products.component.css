@@ -24,14 +24,14 @@
 
 .example-card {
     width:100%;
-    height: 100%;
-   background-image: url('https://material.angular.io/assets/img/examples/shiba2.jpg');
+    height: 150px;
+    background-image: url('https://im0-tub-tr.yandex.net/i?id=41ab5591875d356f62ea6707ad7a76a1&n=13');
     background-size: cover;
 }
   
 mat-card-actions button{
-    color: aliceblue
+    color: aliceblue;
 }
-mat-card-title{
-    color: aliceblue
+mat-card-subtitle{
+    color: aliceblue;
 }

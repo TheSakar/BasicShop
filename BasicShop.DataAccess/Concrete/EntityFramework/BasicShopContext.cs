@@ -19,7 +19,7 @@ namespace BasicShop.DataAccess.Concrete.EntityFramework
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=6906c7f90397;Database=BasicShop;User Id=SA;Password=123123123qq;");
+            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=BasicShop;Integrated Security=true");
             base.OnConfiguring(optionsBuilder);
         }
 
