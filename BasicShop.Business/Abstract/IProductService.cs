@@ -8,5 +8,7 @@ namespace BasicShop.Business.Abstract
         List<Product> GetAll();
 
         List<Product> GetByCategoryId(int categoryId);
+
+        Product GetById(int productId);
     }
 }

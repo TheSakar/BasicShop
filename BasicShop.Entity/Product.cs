@@ -6,6 +6,10 @@ namespace BasicShop.Entity
 {
     public class Product : IEntity
     {
+        public Product()
+        {
+            OrderProducts = new List<OrderProduct>();
+        }
         public int Id { get; set; }
 
         public string ProductName { get; set; }
