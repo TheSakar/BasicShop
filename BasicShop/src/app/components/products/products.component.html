@@ -1,4 +1,4 @@
-<div class="productsHeader">
+  <div class="productsHeader">
   <mat-toolbar>
     <mat-toolbar-row>
       <ul class="row">
@@ -14,7 +14,7 @@
   <div class="row">
     <div class="col-3 mt-2" *ngFor="let product of products">
 
-      <mat-card class="example-card">
+      <mat-card class="example-card" [ngStyle]="{'background': 'url(' + product.imgUrl + ') no-repeat 0 0 / cover'}">
         <mat-card-header>
 
           <mat-card-subtitle>{{product.productName}}</mat-card-subtitle>
